@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugatti La Voiture Noire | Automotive Haute Couture</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="Bugatti La Voiture Noire | Automotive Haute Couture">
+    <meta property="og:description" content="Uma. Única. Para sempre. O carro de série mais caro jamais vendido — 1.500 cv, motor W16 quad-turbo e um design criado em homenagem ao lendário Type 57 SC Atlantic.">
+    <meta property="og:image"       content="assets/atlantic-e-lvn.webp">
+    <meta property="og:locale"      content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Bugatti La Voiture Noire | Automotive Haute Couture">
+    <meta name="twitter:description" content="Uma. Única. Para sempre. O carro de série mais caro jamais vendido — 1.500 cv, motor W16 quad-turbo.">
+    <meta name="twitter:image"       content="assets/atlantic-e-lvn.webp">
+
+    <!-- SEO -->
+    <meta name="description" content="Uma. Única. Para sempre. O carro de série mais caro jamais vendido — 1.500 cv, motor W16 quad-turbo e um design criado em homenagem ao lendário Type 57 SC Atlantic.">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Preconnect: origens críticas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://bugatti.imgix.net" crossorigin>
+
+    <!-- DNS-prefetch para origens secundárias -->
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://sketchfab.com">
+
+    <!-- LCP: preload do poster e do wordmark para descoberta antecipada -->
+    <link rel="preload" as="image" href="assets/poster.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="https://bugatti.imgix.net/682460f2f5c0fd72764f054f/la-voiture-noire-wordmark-flat-new.svg?auto=format,compress&cs=srgb&sharp=10&w=1946&dpr=1" fetchpriority="high" crossorigin>
+
+    <!-- Tailwind CSS (Static Compiled) -->
+    <link rel="stylesheet" href="styles/tailwind-compiled.css">
+
+    <!-- Google Fonts: carregamento não-bloqueante para eliminar render-blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@200;300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@200;300;400;500&display=swap"></noscript>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- GSAP & Plugins (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js" defer></script>
+    <script src="https://unpkg.com/split-type" defer></script>
+    
+    <!-- Custom JS (Deferred) -->
+    <script src="js/script.js" defer></script>
+</head>
+<body class="bg-bugatti-black text-bugatti-light">
+    
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Voltar ao topo"
+        class="fixed bottom-8 right-8 z-50 w-12 h-12 opacity-0 translate-y-4 pointer-events-none transition-all duration-500">
+        <svg class="w-full h-full -rotate-90" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20" fill="none" stroke="#c9b89a" stroke-width="1" stroke-opacity="0.2"/>
+            <circle id="back-to-top-ring" cx="24" cy="24" r="20" fill="none"
+                    stroke="#c9b89a" stroke-width="1.5"
+                    stroke-dasharray="125.66" stroke-dashoffset="125.66"
+                    stroke-linecap="round" class="transition-none"/>
+        </svg>
+        <svg class="absolute inset-0 w-full h-full p-3.5 text-bugatti-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M5 15l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <!-- Section Indicator -->
+    <nav id="section-dots" aria-label="Navegação por seção"
+         class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4 opacity-0 transition-opacity duration-500">
+        <a href="#icon"        data-dot="icon"        aria-label="Héritage"      class="section-dot group flex items-center gap-3 justify-end">
+            <span class="dot-label font-sans text-[9px] tracking-widest uppercase text-bugatti-accent/0 group-hover:text-bugatti-accent transition-all duration-300 whitespace-nowrap">Héritage</span>
+            <span class="dot-circle w-2 h-2 rounded-full border border-bugatti-accent/40 bg-transparent transition-all duration-400"></span>
+        </a>
+        <a href="#design"       data-dot="design"      aria-label="Design"        class="section-dot group flex items-center gap-3 justify-end">
+            <span class="dot-label font-sans text-[9px] tracking-widest uppercase text-bugatti-accent/0 group-hover:text-bugatti-accent transition-all duration-300 whitespace-nowrap">Design</span>
+            <span class="dot-circle w-2 h-2 rounded-full border border-bugatti-accent/40 bg-transparent transition-all duration-400"></span>
+        </a>
+        <a href="#performance"  data-dot="performance" aria-label="Performance"   class="section-dot group flex items-center gap-3 justify-end">
+            <span class="dot-label font-sans text-[9px] tracking-widest uppercase text-bugatti-accent/0 group-hover:text-bugatti-accent transition-all duration-300 whitespace-nowrap">Performance</span>
+            <span class="dot-circle w-2 h-2 rounded-full border border-bugatti-accent/40 bg-transparent transition-all duration-400"></span>
+        </a>
+        <a href="#exclusivity"  data-dot="exclusivity" aria-label="Exclusividade" class="section-dot group flex items-center gap-3 justify-end">
+            <span class="dot-label font-sans text-[9px] tracking-widest uppercase text-bugatti-accent/0 group-hover:text-bugatti-accent transition-all duration-300 whitespace-nowrap">Exclusividade</span>
+            <span class="dot-circle w-2 h-2 rounded-full border border-bugatti-accent/40 bg-transparent transition-all duration-400"></span>
+        </a>
+    </nav>
+
+    <!-- PRELOADER -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-bugatti-black flex items-center justify-center">
+        <div class="flex flex-col items-center gap-6">
+            <img src="https://bugatti.imgix.net/682460f2f5c0fd72764f054f/la-voiture-noire-wordmark-flat-new.svg?auto=format,compress&cs=srgb&sharp=10&w=1946&dpr=1"
+                 alt="La Voiture Noire"
+                 fetchpriority="high"
+                 width="1946" height="300"
+                 class="w-56 md:w-80 brightness-0 invert filter preloader-logo">
+            <div class="preloader-line"></div>
+            <p class="preloader-sub font-sans text-[9px] tracking-[0.35em] uppercase text-bugatti-accent/50">Bugatti · Molsheim · 2019</p>
+        </div>
+    </div>
+
+    
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-6 transition-all duration-500 bg-transparent">
+        <a href="#" class="flex items-center gap-3 group">
+            <span class="font-serif text-xl tracking-widest-2 text-bugatti-light uppercase">Bugatti</span>
+            <span class="hidden xl:block w-px h-4 bg-bugatti-accent/40"></span>
+            <span class="hidden xl:block font-sans text-[10px] tracking-widest-2 text-bugatti-accent/60 uppercase font-light">
+                Molsheim · Est. 1909
+            </span>
+        </a>
+
+        <ul class="hidden lg:flex items-center gap-10 font-sans text-xs tracking-widest-2 uppercase font-light">
+            <li><a href="#icon" class="nav-link">Héritage</a></li>
+            <li><a href="#design" class="nav-link">Design</a></li>
+            <li><a href="#performance" class="nav-link">Performance</a></li>
+            <li><a href="#exclusivity" class="nav-link">Exclusividade</a></li>
+        </ul>
+
+        <a href="https://www.bugatti.com/" target="_blank" rel="noopener noreferrer"
+           class="hidden lg:inline-block font-sans text-[10px] tracking-widest-2 uppercase font-light border border-bugatti-accent/30 text-bugatti-accent px-5 py-2 hover:border-bugatti-accent hover:text-bugatti-light transition-all duration-300">
+            Consultar
+        </a>
+
+        <!-- Hambúrguer mobile -->
+        <button id="mobile-menu-btn" class="lg:hidden flex flex-col gap-[5px] p-2 z-50" aria-label="Abrir menu" aria-expanded="false">
+            <span class="hamburger-line block w-6 h-[1px] bg-bugatti-light transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-[1px] bg-bugatti-light transition-all duration-300"></span>
+            <span class="hamburger-line block w-4 h-[1px] bg-bugatti-light transition-all duration-300"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-bugatti-black flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <ul class="flex flex-col items-center gap-10 font-sans text-sm tracking-widest-2 uppercase font-light">
+            <li><a href="#icon" class="mobile-nav-link text-bugatti-accent hover:text-white transition-colors duration-300">Héritage</a></li>
+            <li><a href="#design" class="mobile-nav-link text-bugatti-accent hover:text-white transition-colors duration-300">Design</a></li>
+            <li><a href="#performance" class="mobile-nav-link text-bugatti-accent hover:text-white transition-colors duration-300">Performance</a></li>
+            <li><a href="#exclusivity" class="mobile-nav-link text-bugatti-accent hover:text-white transition-colors duration-300">Exclusividade</a></li>
+        </ul>
+        <a href="https://www.bugatti.com/" target="_blank" rel="noopener noreferrer" class="mt-16 font-sans text-[10px] tracking-widest-2 uppercase font-light border border-bugatti-accent/30 text-bugatti-accent px-8 py-3 hover:border-bugatti-accent hover:text-white transition-all duration-300">
+            Consultar
+        </a>
+    </div>
+
+    <main>
+    <!-- Video Sequence Section (Hero) -->
+    <!-- h-[400vh] creates the scrollable area while the sticky div stays fixed -->
+    <section class="video-section relative h-[400vh] w-full bg-bugatti-black">
+        <div class="sticky top-0 h-screen w-full overflow-hidden" style="height: 100vh; height: 100dvh;">
+            <!-- Video -->
+            <video id="hero-video" class="w-full h-full object-cover" poster="assets/poster.webp" muted playsinline preload="none">
+                <track kind="captions" src="assets/captions.vtt" srclang="pt" label="Português" default>
+            </video>
+            
+            <!-- Vignette overlay for deeper luxury feel -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black pointer-events-none"></div>
+            
+            <!-- Overlay Text -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 px-4">
+                <img src="https://bugatti.imgix.net/682460f2f5c0fd72764f054f/la-voiture-noire-wordmark-flat-new.svg?auto=format,compress&cs=srgb&sharp=10&w=1946&dpr=1"
+                     alt="La Voiture Noire"
+                     width="1946" height="300"
+                     class="w-full max-w-2xl hero-title opacity-0 translate-y-8 brightness-0 invert filter">
+                <p class="mt-8 text-sm md:text-base font-sans font-light tracking-widest uppercase text-bugatti-light hero-subtitle opacity-0 translate-y-8">
+                    Alta Costura Automotiva
+                </p>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 scroll-indicator flex flex-col items-center opacity-0">
+                <span class="text-[10px] tracking-widest uppercase mb-4 text-bugatti-accent font-light">Role para descobrir</span>
+                <div class="w-[1px] h-12 bg-gradient-to-b from-bugatti-accent to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content: L'Icône -->
+    <section id="icon" class="relative z-10 bg-bugatti-black py-32 lg:py-48 px-6 md:px-10 lg:px-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+            <div class="lg:col-span-5 space-y-10" data-reveal>
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-widest uppercase text-bugatti-accent font-sans block" data-scramble>A Inspiração</span>
+                    <h2 class="text-4xl md:text-6xl font-serif text-white leading-tight">Lenda Perdida, <br><span class="text-bugatti-accent italic">Inspiração Encontrada</span></h2>
+                </div>
+                <p class="text-lg text-bugatti-accent font-sans font-light leading-relaxed">
+                    O TYPE 57 SC ATLANTIC incorpora o espírito pioneiro e a paixão pela perfeição da BUGATTI. A LA VOITURE NOIRE, um tributo ao quarto ATLANTIC desaparecido, representa uma mistura icônica de velocidade, luxo e alta costura automotiva.
+                </p>
+            </div>
+            <div class="lg:col-span-7 overflow-hidden image-reveal rounded-2xl" style="clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);">
+                <img src="assets/atlantic-e-lvn.webp"
+                     alt="Type 57 SC Atlantic e La Voiture Noire"
+                     loading="lazy"
+                     width="1200" height="800"
+                     class="w-full h-auto brightness-90 hover:brightness-100 transition-all duration-1000 rounded-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo de Fabricação -->
+    <section class="relative bg-bugatti-dark py-32 lg:py-48 px-6 md:px-10 lg:px-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 space-y-4" data-reveal>
+                <span class="text-[10px] tracking-widest uppercase text-bugatti-accent font-sans block" data-scramble>Manufatura</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">Dois Anos, <br><span class="text-bugatti-accent italic">Uma Obra-Prima</span></h2>
+                <p class="text-base text-bugatti-accent/60 font-sans font-light max-w-xl mx-auto">
+                    Cada etapa foi executada à mão por artesãos do atelier de Molsheim. Não há linha de montagem — há um único carro e pessoas dedicadas inteiramente a ele.
+                </p>
+            </div>
+
+            <!-- Linha de tempo horizontal -->
+            <div class="relative">
+                <!-- Linha conectora -->
+                <div class="hidden md:block absolute top-8 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-bugatti-gold/30 to-transparent"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-6">
+
+                    <!-- Fase 1 -->
+                    <div class="flex flex-col items-center text-center space-y-5" data-reveal>
+                        <div class="relative z-10 w-16 h-16 rounded-full border border-bugatti-gold/40 bg-bugatti-dark flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-bugatti-gold/70" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-gold/60 mb-2">Fase I</p>
+                            <p class="font-serif text-lg text-white font-light mb-3">Esboço & Argila</p>
+                            <p class="font-sans text-xs text-bugatti-accent/50 font-light leading-relaxed">O design começa em papel. Centenas de esboços são reduzidos a um único conceito, então esculpido em argila em escala real.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 2 -->
+                    <div class="flex flex-col items-center text-center space-y-5" data-reveal>
+                        <div class="relative z-10 w-16 h-16 rounded-full border border-bugatti-gold/40 bg-bugatti-dark flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-bugatti-gold/70" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-gold/60 mb-2">Fase II</p>
+                            <p class="font-serif text-lg text-white font-light mb-3">Fibra de Carbono</p>
+                            <p class="font-sans text-xs text-bugatti-accent/50 font-light leading-relaxed">Cada painel da carroceria é laminado à mão em fibra de carbono exposta. O processo leva meses para garantir espessura uniforme.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 3 -->
+                    <div class="flex flex-col items-center text-center space-y-5" data-reveal>
+                        <div class="relative z-10 w-16 h-16 rounded-full border border-bugatti-gold/40 bg-bugatti-dark flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-bugatti-gold/70" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-gold/60 mb-2">Fase III</p>
+                            <p class="font-serif text-lg text-white font-light mb-3">Pintura</p>
+                            <p class="font-sans text-xs text-bugatti-accent/50 font-light leading-relaxed">Camadas de verniz preto profundo são aplicadas e polidas manualmente até atingir reflexo de espelho, preservando a textura do carbono.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 4 -->
+                    <div class="flex flex-col items-center text-center space-y-5" data-reveal>
+                        <div class="relative z-10 w-16 h-16 rounded-full border border-bugatti-gold/40 bg-bugatti-dark flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-bugatti-gold/70" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-gold/60 mb-2">Fase IV</p>
+                            <p class="font-serif text-lg text-white font-light mb-3">Interior Bespoke</p>
+                            <p class="font-sans text-xs text-bugatti-accent/50 font-light leading-relaxed">Artesãos do atelier cosem à mão cada detalhe do habitáculo — couro, pontos e metais calibrados ao milímetro para o único proprietário.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 5 -->
+                    <div class="flex flex-col items-center text-center space-y-5" data-reveal>
+                        <div class="relative z-10 w-16 h-16 rounded-full border border-bugatti-gold/40 bg-bugatti-dark flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-bugatti-gold/70" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-gold/60 mb-2">Fase V</p>
+                            <p class="font-serif text-lg text-white font-light mb-3">Teste & Entrega</p>
+                            <p class="font-sans text-xs text-bugatti-accent/50 font-light leading-relaxed">Centenas de horas de testes dinâmicos em Molsheim antes da entrega ao proprietário anônimo. Genebra, março de 2019.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparativo Atlantic vs LVN -->
+    <section class="relative bg-bugatti-black py-32 lg:py-48 px-6 md:px-10 lg:px-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 space-y-4" data-reveal>
+                <span class="text-[10px] tracking-widest uppercase text-bugatti-accent font-sans block" data-scramble>1936 — 2019</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">Oito Décadas, <br><span class="text-bugatti-accent italic">Uma Alma</span></h2>
+                <p class="text-sm text-bugatti-accent/60 font-sans font-light mt-4">Arraste para comparar</p>
+            </div>
+
+            <!-- Slider -->
+            <div id="compare-slider" class="relative w-full overflow-hidden rounded-2xl select-none" style="cursor: ew-resize;">
+                <!-- Imagem direita: LVN 2019 -->
+                <img src="assets/lvn-2019.webp" alt="La Voiture Noire 2019"
+                     loading="lazy"
+                     width="1920" height="1080"
+                     class="absolute inset-0 w-full h-full object-cover brightness-90">
+                <div id="label-lvn" class="absolute bottom-4 right-3 font-sans text-[8px] tracking-widest uppercase text-bugatti-gold/80 bg-black/60 px-2 py-1 z-10" style="opacity:0;transition:opacity 0.4s ease;">LVN · 2019</div>
+
+                <!-- Imagem esquerda: Atlantic 1936 (clip-path revela da esquerda) -->
+                <img id="compare-left" src="assets/atlantic-1936.webp" alt="Type 57 SC Atlantic 1936"
+                     loading="lazy"
+                     width="1920" height="1080"
+                     class="absolute inset-0 w-full h-full object-cover brightness-90"
+                     style="clip-path: inset(0 50% 0 0);">
+                <div id="label-atlantic" class="absolute bottom-4 left-3 font-sans text-[8px] tracking-widest uppercase text-bugatti-gold/80 bg-black/60 px-2 py-1 z-10" style="opacity:0;transition:opacity 0.4s ease;">ATLANTIC · 1936</div>
+
+                <!-- Divisor -->
+                <div id="compare-handle" class="absolute top-0 bottom-0 flex flex-col items-center" style="left: 50%; transform: translateX(-50%); z-index: 10;">
+                    <div class="w-[1px] h-full bg-bugatti-gold/60"></div>
+                    <div class="absolute top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-bugatti-gold flex items-center justify-center shadow-lg shadow-bugatti-gold/30">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Labels -->
+            <div class="hidden lg:flex lg:flex-row lg:justify-between lg:gap-4 mt-6 font-sans text-[10px] tracking-widest uppercase text-bugatti-accent/70">
+                <span>Type 57 SC Atlantic · Jean Bugatti · 1936</span>
+                <span class="lg:text-right">La Voiture Noire · Étienne Salomé · 2019</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERITAGE TIMELINE -->
+    <section id="heritage-timeline" class="relative bg-bugatti-dark py-24 lg:py-40 px-6 md:px-16 lg:px-32 border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-24" data-reveal>
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-gold mb-4" data-scramble>A Lenda Viva</p>
+                <h2 class="font-serif font-light text-4xl md:text-5xl text-white">Timeline da Herança</h2>
+            </div>
+            
+            <div class="relative wrap overflow-hidden p-10 h-full">
+                <!-- Racetrack Line -->
+                <div class="timeline-track absolute h-full left-1/2 -translate-x-1/2 w-10 md:w-16 bg-[#0a0a0a] flex justify-center z-0 border-x border-white/5">
+                    <!-- Left curb -->
+                    <div class="absolute left-0 top-0 bottom-0 w-1 md:w-1.5 bg-black"></div>
+                    <!-- Right curb -->
+                    <div class="absolute right-0 top-0 bottom-0 w-1 md:w-1.5 bg-black"></div>
+                    <!-- Center dashed line -->
+                    <div class="w-0.5 md:w-1 h-full" style="background: repeating-linear-gradient(to bottom, #fbbf24 0, #fbbf24 30px, transparent 30px, transparent 60px);"></div>
+                </div>
+
+                <!-- 1909 -->
+                <div class="mb-16 flex justify-between items-center w-full right-timeline" data-reveal>
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 w-12 md:w-20 h-1.5 bg-bugatti-gold shadow-[0_0_15px_#c9b89a] rounded-full"></div>
+                    <div class="order-1 bg-bugatti-black border border-white/5 p-6 w-5/12 spec-card text-left">
+                        <h3 class="mb-2 font-serif text-2xl text-bugatti-light">1909</h3>
+                        <p class="text-sm font-sans font-light text-white/50">Ettore Bugatti funda sua marca em Molsheim, definindo que "nada é belo demais, nada é caro demais".</p>
+                    </div>
+                </div>
+
+                <!-- 1936 -->
+                <div class="mb-16 flex justify-between items-center w-full flex-row-reverse left-timeline" data-reveal>
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 w-12 md:w-20 h-1.5 bg-bugatti-gold shadow-[0_0_15px_#c9b89a] rounded-full"></div>
+                    <div class="order-1 bg-bugatti-black border border-white/5 p-6 w-5/12 spec-card text-right">
+                        <h3 class="mb-2 font-serif text-2xl text-bugatti-light">1936</h3>
+                        <p class="text-sm font-sans font-light text-white/50">Jean Bugatti desenha o Type 57 SC Atlantic. Apenas 4 unidades são produzidas, marcando o auge do design automotivo.</p>
+                    </div>
+                </div>
+
+                <!-- 1938 -->
+                <div class="mb-16 flex justify-between items-center w-full right-timeline" data-reveal>
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 w-12 md:w-20 h-1.5 bg-bugatti-gold shadow-[0_0_15px_#c9b89a] rounded-full"></div>
+                    <div class="order-1 bg-bugatti-black border border-white/5 p-6 w-5/12 spec-card text-left">
+                        <h3 class="mb-2 font-serif text-2xl text-bugatti-light">1938</h3>
+                        <p class="text-sm font-sans font-light text-white/50">Um dos quatro exemplares, a mítica "La Voiture Noire" de Jean Bugatti, desaparece misteriosamente durante a Segunda Guerra Mundial. Nunca foi encontrado.</p>
+                    </div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="flex justify-between items-center w-full flex-row-reverse left-timeline" data-reveal>
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 w-12 md:w-20 h-1.5 bg-bugatti-gold shadow-[0_0_20px_#c9b89a] rounded-full"></div>
+                    <div class="order-1 bg-bugatti-black border border-bugatti-gold/30 p-6 w-5/12 spec-card text-right">
+                        <h3 class="mb-2 font-serif text-2xl text-bugatti-gold">2019</h3>
+                        <p class="text-sm font-sans font-light text-white/70">O tributo ganha vida. A nova La Voiture Noire é revelada, unindo a velocidade lendária do W16 à alta-costura de Jean Bugatti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content: The Heart -->
+    <section id="heart" class="relative z-10 bg-bugatti-dark py-32 lg:py-48 px-6 md:px-10 lg:px-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+            <div class="lg:col-span-7 order-2 lg:order-1 overflow-hidden image-reveal rounded-2xl" style="clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);">
+                <img src="assets/lvn-escapamentos.webp"
+                     alt="Seis saídas de escapamento"
+                     loading="lazy"
+                     width="1200" height="900"
+                     class="w-full brightness-90 hover:brightness-100 transition-all duration-1000 rounded-2xl"
+                     style="min-height:600px; object-fit: cover; object-position: center;">
+            </div>
+            <div class="lg:col-span-5 order-1 lg:order-2 space-y-10" data-reveal>
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-widest uppercase text-bugatti-accent font-sans block" data-scramble>Potência & Performance</span>
+                    <h2 class="text-4xl md:text-6xl font-serif text-white leading-tight">Coração de um <br><span class="text-bugatti-accent italic">Novo Ícone</span></h2>
+                </div>
+                <p class="text-lg text-bugatti-accent font-sans font-light leading-relaxed">
+                    Seis saídas de escapamento testemunham um poder incrível. Sutilmente incorporadas à aparência geral, elas indicam a força do coração do carro, o icônico motor de 16 cilindros.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'Artiste: Étienne Salomé -->
+    <section id="artiste" class="relative z-10 bg-bugatti-black py-32 lg:py-48 px-6 md:px-10 lg:px-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+            <div class="lg:col-span-7 order-2 lg:order-1 relative" data-reveal>
+                <blockquote class="border-l border-bugatti-gold/40 pl-8 space-y-6">
+                    <p class="font-serif italic text-2xl md:text-3xl text-white/80 leading-relaxed">
+                        "Queria que o carro parecesse que havia sido esculpido a partir de um único bloco de carbono — sem interrupções, sem costuras visíveis."
+                    </p>
+                    <footer class="space-y-1">
+                        <p class="font-sans text-sm text-bugatti-gold tracking-widest uppercase">Étienne Salomé</p>
+                        <p class="font-sans text-xs text-bugatti-accent/50 font-light">Designer-chefe · Bugatti Automobiles</p>
+                    </footer>
+                </blockquote>
+                <div class="mt-16 grid grid-cols-3 gap-px bg-white/5">
+                    <div class="bg-bugatti-black p-3 lg:p-6 text-center">
+                        <p class="font-serif text-3xl text-white font-light">36</p>
+                        <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent/50 mt-2">Anos ao criar<br/>a LVN</p>
+                    </div>
+                    <div class="bg-bugatti-black p-3 lg:p-6 text-center">
+                        <p class="font-serif text-3xl text-white font-light">2</p>
+                        <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent/50 mt-2">Anos de<br/>desenvolvimento</p>
+                    </div>
+                    <div class="bg-bugatti-black p-3 lg:p-6 text-center">
+                        <p class="font-serif text-3xl text-white font-light">1</p>
+                        <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent/50 mt-2">Unidade<br/>no mundo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 order-1 lg:order-2 space-y-8" data-reveal>
+                <span class="text-[10px] tracking-widest uppercase text-bugatti-accent font-sans block" data-scramble>L'Artiste</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">O Homem por<br/><span class="text-bugatti-accent italic">Trás da Obra</span></h2>
+                <p class="text-base text-bugatti-accent font-sans font-light leading-relaxed">
+                    Aos 36 anos, Étienne Salomé recebeu a missão mais extraordinária da indústria automobilística: criar um tributo ao lendário TYPE 57 SC ATLANTIC desaparecido. O resultado foi a La Voiture Noire — um carro que não é apenas um veículo, mas uma obra de alta costura automotiva.
+                </p>
+                <p class="text-base text-bugatti-accent font-sans font-light leading-relaxed">
+                    Formado pela prestigiada Strate School of Design em Paris, Salomé rejeitou toda ornamentação supérflua. Cada curva da carroceria em fibra de carbono foi esculpida para evocar a elegância orgânica do Atlantic de Jean Bugatti, traduzida para o século XXI.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content: Pristine Lines -->
+    <section id="design" class="relative z-10 bg-bugatti-black py-32 md:py-48 px-6 md:px-10 lg:px-20">
+        <div class="max-w-4xl mx-auto text-center space-y-16" data-reveal>
+            <div class="space-y-6">
+                <span class="text-[10px] tracking-widest uppercase text-bugatti-accent font-sans block" data-scramble>Design</span>
+                <h2 class="text-4xl md:text-6xl font-serif text-white leading-tight">Linhas Impecáveis & <br><span class="italic text-bugatti-accent">Efeito Visual Aprimorado</span></h2>
+            </div>
+            <p class="text-xl text-bugatti-accent font-sans font-light leading-relaxed max-w-3xl mx-auto">
+                O purismo e a elegância refletem-se em cada superfície e prolongam-se em cada detalhe. O para-brisas parece fluir suavemente para os vidros como a viseira de um capacete. A impressão alongada é criada ao guiar sutilmente o olhar através das linhas claras da LA VOITURE NOIRE, fundindo-se perfeitamente em uma única peça.
+            </p>
+        </div>
+        
+        <div class="w-full max-w-7xl mx-auto mt-24 overflow-hidden">
+                <img id="car-approach" src="assets/bugatti-la-voiture-noire.webp"
+                     alt="La Voiture Noire - vista frontal"
+                     loading="lazy"
+                     width="1920" height="1080"
+                     class="w-full h-[60vh] md:h-[80vh] object-cover opacity-0">
+        </div>
+    </section>
+
+    <!-- PERFORMANCE -->
+    <section id="performance" class="relative bg-bugatti-black py-24 md:py-40 px-6 md:px-16 lg:px-32 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 flex flex-col items-center" data-reveal>
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent mb-4" data-scramble>Engenharia Absoluta</p>
+                <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-10">Especificações</h2>
+                
+                <!-- W16 Audio Button -->
+                <button id="w16-audio-btn" class="group flex items-center gap-4 border border-bugatti-gold/30 px-6 py-3 rounded-full hover:border-bugatti-gold transition-all duration-500 bg-bugatti-black shadow-2xl">
+                    <div class="w-8 h-8 rounded-full bg-bugatti-gold/10 flex items-center justify-center group-hover:bg-bugatti-gold transition-colors duration-500">
+                        <svg class="w-3 h-3 text-bugatti-gold group-hover:text-bugatti-black play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg class="w-3 h-3 text-bugatti-gold group-hover:text-bugatti-black pause-icon hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </div>
+                    <span class="font-sans text-xs tracking-widest text-bugatti-gold uppercase">Ouça o motor W16</span>
+                    
+                    <!-- Waveform Animation -->
+                    <div class="flex items-end gap-[3px] h-4 ml-2 w-10 waveform-container opacity-50">
+                        <div class="w-1 bg-bugatti-gold h-1 bar"></div>
+                        <div class="w-1 bg-bugatti-gold h-2 bar"></div>
+                        <div class="w-1 bg-bugatti-gold h-1 bar"></div>
+                        <div class="w-1 bg-bugatti-gold h-3 bar"></div>
+                        <div class="w-1 bg-bugatti-gold h-1 bar"></div>
+                    </div>
+                </button>
+                <audio id="w16-audio" loop src="assets/motor.mp3"></audio>
+            </div>
+            <div id="perf-grid" class="grid grid-cols-2 md:grid-cols-3 gap-px bg-bugatti-accent/10">
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Motor</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2">W16</p>
+                    <p class="font-sans text-xs text-white/40 font-light leading-relaxed">8,0L Quad-Turbo<br/>16 cilindros em W</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Potência</p>
+                    <p class="font-serif text-3xl md:text-4xl text-bugatti-light font-light leading-none mb-2"><span data-counter="1500">0</span></p>
+                    <p class="font-sans text-xs text-white/40 font-light">cv / 1.103 kW</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Torque</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2"><span data-counter="1600">0</span><span class="text-xl text-white/40"> Nm</span></p>
+                    <p class="font-sans text-xs text-white/40 font-light">1.180 lb-ft</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">0 – 100 km/h</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2"><span data-counter="2.4">0</span><span class="text-xl text-white/40"> s</span></p>
+                    <p class="font-sans text-xs text-white/40 font-light">Aceleração</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Transmissão</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2">7</p>
+                    <p class="font-sans text-xs text-white/40 font-light">Velocidades<br/>Dupla-embreagem</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Vel. Máxima</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2"><span data-counter="380">0</span><span class="text-xl text-white/40"> km/h</span></p>
+                    <p class="font-sans text-xs text-white/40 font-light">236 mph</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Frenagem</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2">10<span class="text-xl text-white/40"> s</span></p>
+                    <p class="font-sans text-xs text-white/40 font-light">400 – 0 km/h</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Tração</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2">AWD</p>
+                    <p class="font-sans text-xs text-white/40 font-light">4 rodas motrizes<br/>com diferencial variável</p>
+                </div>
+                <div class="spec-card bg-bugatti-black p-8 md:p-10">
+                    <p class="font-sans text-bugatti-accent text-[10px] tracking-widest uppercase mb-4">Peso</p>
+                    <p class="font-serif text-3xl md:text-4xl text-white font-light leading-none mb-2"><span data-counter="1996">0</span><span class="text-xl text-white/40"> kg</span></p>
+                    <p class="font-sans text-xs text-white/40 font-light">Fibra de carbono<br/>estrutural</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERIOR -->
+    <section class="relative bg-bugatti-dark py-24 md:py-40 px-6 md:px-16 lg:px-32 xl:px-48 border-t border-white/5">
+        <div class="max-w-5xl mx-auto text-center" data-reveal>
+            <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent mb-6" data-scramble>Habitáculo</p>
+            <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-8 leading-tight">O Grand Tourer<br/><em class="text-bugatti-accent italic">mais confortável já feito</em></h2>
+            <div class="divider mx-auto mb-10"></div>
+            <p class="font-sans font-light text-sm md:text-base leading-relaxed text-white/55 max-w-2xl mx-auto mb-20">
+                O interior foi concebido especificamente para seu único proprietário — assento, pedais e controles foram calibrados ao milímetro. Couro costurado à mão, metais usinados em alumínio aeronáutico e minimalismo inspirado na haute couture francesa criam um ambiente que se sente tanto como um ateliê quanto como um cockpit de Fórmula 1.
+            </p>
+            <div class="mt-4" id="interior-features">
+                <div class="interior-feature group cursor-default flex items-start gap-8 md:gap-14 py-10 border-t border-white/10">
+                    <div class="flex-shrink-0 w-10 md:w-14">
+                        <span class="font-serif text-4xl md:text-5xl text-bugatti-gold/20 group-hover:text-bugatti-gold/70 transition-colors duration-500 leading-none">I</span>
+                    </div>
+                    <div class="w-px self-stretch bg-white/10 flex-shrink-0"></div>
+                    <div class="flex-1 md:flex md:items-start md:gap-14">
+                        <h3 class="font-serif text-xl md:text-2xl text-white font-light mb-3 md:mb-0 md:w-56 flex-shrink-0">Couro Artesanal</h3>
+                        <p class="font-sans text-sm text-white/40 font-light leading-relaxed">Estofamento costurado à mão por artesãos do atelier de Molsheim, com costuras em padrões exclusivos para este exemplar.</p>
+                    </div>
+                </div>
+                <div class="interior-feature group cursor-default flex items-start gap-8 md:gap-14 py-10 border-t border-white/10">
+                    <div class="flex-shrink-0 w-10 md:w-14">
+                        <span class="font-serif text-4xl md:text-5xl text-bugatti-gold/20 group-hover:text-bugatti-gold/70 transition-colors duration-500 leading-none">II</span>
+                    </div>
+                    <div class="w-px self-stretch bg-white/10 flex-shrink-0"></div>
+                    <div class="flex-1 md:flex md:items-start md:gap-14">
+                        <h3 class="font-serif text-xl md:text-2xl text-white font-light mb-3 md:mb-0 md:w-56 flex-shrink-0">Alumínio Usinado</h3>
+                        <p class="font-sans text-sm text-white/40 font-light leading-relaxed">Cada interruptor, moldura e detalhe metálico é usinado a partir de blocos sólidos de alumínio aeronáutico de alta pureza.</p>
+                    </div>
+                </div>
+                <div class="interior-feature group cursor-default flex items-start gap-8 md:gap-14 py-10 border-t border-white/10">
+                    <div class="flex-shrink-0 w-10 md:w-14">
+                        <span class="font-serif text-4xl md:text-5xl text-bugatti-gold/20 group-hover:text-bugatti-gold/70 transition-colors duration-500 leading-none">III</span>
+                    </div>
+                    <div class="w-px self-stretch bg-white/10 flex-shrink-0"></div>
+                    <div class="flex-1 md:flex md:items-start md:gap-14">
+                        <h3 class="font-serif text-xl md:text-2xl text-white font-light mb-3 md:mb-0 md:w-56 flex-shrink-0">Bespoke Total</h3>
+                        <p class="font-sans text-sm text-white/40 font-light leading-relaxed">Assento, pedais e comandos adaptados à anatomia exata do proprietário — um único ser humano no mundo.</p>
+                    </div>
+                </div>
+                <div class="border-b border-white/10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le Propriétaire Inconnu -->
+    <section class="relative bg-bugatti-black py-32 lg:py-48 px-6 md:px-20 border-t border-white/5 overflow-hidden">
+        <!-- Fundo decorativo -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none deco-question" aria-hidden="true"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20 space-y-4" data-reveal>
+                <span class="text-[10px] tracking-widest uppercase text-bugatti-accent font-sans block" data-scramble>Le Mystère</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">Le Propriétaire <br><span class="text-bugatti-accent italic">Inconnu</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <!-- Texto principal -->
+                <div class="lg:col-span-7 space-y-8" data-reveal>
+                    <p class="text-lg text-bugatti-accent font-sans font-light leading-relaxed">
+                        A identidade do comprador da La Voiture Noire nunca foi oficialmente revelada. A Bugatti confirmou apenas que existe um único proprietário, e que a transação ocorreu antes mesmo da estreia pública no Salão de Genebra de 2019.
+                    </p>
+                    <p class="text-base text-bugatti-accent/70 font-sans font-light leading-relaxed">
+                        A especulação mais persistente aponta para <span class="text-white">Ferdinand Piëch</span> — ex-chairman do Grupo Volkswagen, o homem que ressuscitou a Bugatti em 1998 e encomendou o projeto Veyron. Piëch faleceu em agosto de 2019, poucos meses após a entrega estimada do veículo. Nunca confirmou nem desmentiu.
+                    </p>
+                    <p class="text-base text-bugatti-accent/70 font-sans font-light leading-relaxed">
+                        O preço de <span class="text-white font-serif text-xl">$19.000.000</span> foi pago integralmente antes do início da construção. O carro existe. O proprietário, não oficialmente.
+                    </p>
+                </div>
+
+                <!-- Cards de especulação -->
+                <div class="lg:col-span-5 space-y-px" data-reveal>
+                    <div class="bg-bugatti-dark border border-white/5 p-8 space-y-3">
+                        <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-gold/50">Teoria mais citada</p>
+                        <p class="font-serif text-xl text-white font-light">Ferdinand Piëch</p>
+                        <p class="font-sans text-xs text-bugatti-accent/50 font-light leading-relaxed">Ex-chairman do Grupo VW. Restaurou a Bugatti. Obcecado por engenharia de ponta. Faleceu em 2019.</p>
+                    </div>
+                    <div class="bg-bugatti-dark border border-white/5 p-8 space-y-3">
+                        <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-accent/30">O que Bugatti diz</p>
+                        <p class="font-serif text-xl text-white/60 italic font-light">"Um entusiasta europeu."</p>
+                        <p class="font-sans text-xs text-bugatti-accent/40 font-light leading-relaxed">Declaração oficial da Bugatti à imprensa. Nenhum detalhe adicional foi fornecido.</p>
+                    </div>
+                    <div class="bg-bugatti-dark border border-white/5 p-8 space-y-3">
+                        <p class="font-sans text-[9px] tracking-widest uppercase text-bugatti-accent/30">Valor pago</p>
+                        <p class="font-serif text-3xl text-white font-light">$19<span class="text-xl text-white/40">M</span></p>
+                        <p class="font-sans text-xs text-bugatti-accent/40 font-light leading-relaxed">O carro de produção mais caro já vendido na história. Pago antes da construção começar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXCLUSIVITY -->
+    <section id="exclusivity" class="relative bg-bugatti-black py-32 md:py-56 px-6 md:px-16 lg:px-32 xl:px-48 border-t border-white/5">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden deco-01" aria-hidden="true"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10" data-reveal>
+            <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent mb-6" data-scramble>Exclusividade</p>
+            <h2 id="exclusivity-title" class="font-serif font-light text-5xl md:text-7xl lg:text-8xl text-white leading-none mb-4">
+                <span class="word-mask"><span class="reveal-word">Uma.</span></span>
+                <span class="word-mask"><em class="reveal-word text-bugatti-accent italic">Única.</em></span>
+                <span class="word-mask"><span class="reveal-word">Para sempre.</span></span>
+            </h2>
+            <div class="divider mx-auto my-12"></div>
+            <p class="font-sans font-light text-sm md:text-base leading-relaxed text-white/55 max-w-xl mx-auto mb-16">
+                La Voiture Noire existe como exemplar único no mundo. Não há lista de espera, não há segunda unidade, não há réplica. Uma decisão deliberada de Bugatti: a exclusividade não é uma estratégia de marketing — é um princípio filosófico.
+            </p>
+            <div class="inline-block w-full sm:w-auto border border-bugatti-accent/20 px-4 sm:px-12 py-8 sm:py-10 mb-16" data-reveal>
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent/60 mb-3">Valor de Aquisição</p>
+                <p class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-light">$19.000.000</p>
+                <p class="font-sans text-[10px] sm:text-xs text-white/30 mt-2 font-light">O carro de série mais caro já vendido · 2019</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D INTERACTIVE EXPLORER -->
+    <section id="interactive-3d" class="relative bg-bugatti-dark py-24 md:py-40 px-6 md:px-16 lg:px-32 border-t border-white/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <div class="text-center mb-16" data-reveal>
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-gold mb-4" data-scramble>A Forma Perfeita</p>
+                <h2 class="font-serif font-light text-4xl md:text-5xl text-white">Exploração 360º</h2>
+                <p class="mt-6 text-white/60 font-sans font-light text-sm tracking-wide max-w-2xl mx-auto">
+                    Interaja com o design escultural da La Voiture Noire. Arraste para rotacionar e utilize o zoom para explorar cada detalhe da fibra de carbono exposta.
+                </p>
+            </div>
+            
+            <div class="w-full h-[60vh] md:h-[80vh] relative bg-transparent overflow-hidden" data-reveal>
+                <!-- CSS Hack para esconder a UI do Sketchfab (Crop Mask reduzida para evitar zoom) -->
+                <div class="absolute -top-[65px] -bottom-[55px] left-0 right-0">
+                    <div id="sketchfab-overlay" class="absolute inset-0 z-10 flex items-center justify-center bg-transparent cursor-pointer transition-opacity duration-300">
+                        <span class="text-white font-sans text-xs tracking-widest uppercase border border-white/20 px-6 py-3 bg-bugatti-black/60 backdrop-blur-sm rounded-full pointer-events-auto">Toque para interagir</span>
+                    </div>
+                    <iframe id="sketchfab-iframe" title="2020 Bugatti La Voiture Noire" 
+                        class="w-full h-full outline-none"
+                        frameborder="0" 
+                        allowfullscreen 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true" 
+                        allow="autoplay; fullscreen; xr-spatial-tracking" 
+                        xr-spatial-tracking 
+                        execution-while-out-of-viewport 
+                        execution-while-not-rendered 
+                        web-share 
+                        style="pointer-events: none;"
+                        loading="lazy"
+                        data-src="https://sketchfab.com/models/21c50a01182841c8aa4c178c060a346a/embed?autostart=1&transparent=1&ui_theme=dark&dnt=1&ui_infos=0&ui_watermark=0&ui_stop=0&ui_inspector=0"> 
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="text-center mt-6 opacity-70 hover:opacity-100 transition-opacity duration-300">
+                <p class="font-sans text-[9px] tracking-widest text-bugatti-light uppercase">
+                    Modelo 3D criado por <a href="https://sketchfab.com/outpiston" target="_blank" rel="nofollow" class="text-bugatti-gold underline">OUTPISTON</a> via Sketchfab
+                </p>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <!-- Footer -->
+    <footer class="bg-bugatti-dark border-t border-white/10">
+
+        <!-- Quote -->
+        <div class="border-b border-white/5 py-16 px-6 text-center">
+            <p class="font-serif italic text-2xl md:text-3xl text-white/55 max-w-2xl mx-auto leading-relaxed">
+                "Si comparable, ce n'est plus Bugatti."
+            </p>
+            <span class="mt-4 block font-sans text-[10px] tracking-widest uppercase text-bugatti-gold/75">— Ettore Bugatti</span>
+        </div>
+
+        <!-- 4 colunas -->
+        <div class="max-w-7xl mx-auto px-6 md:px-20 py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+
+            <!-- Col 1: Marca -->
+            <div class="space-y-6">
+                <img src="https://bugatti.imgix.net/682460f2f5c0fd72764f054f/la-voiture-noire-wordmark-flat-new.svg?auto=format,compress&cs=srgb&sharp=10&w=1946&dpr=1"
+                     alt="La Voiture Noire"
+                     loading="lazy"
+                     width="1946" height="300"
+                     class="w-40 brightness-0 invert filter opacity-60">
+                <p class="font-sans text-xs font-light text-bugatti-accent/80 leading-relaxed">
+                    Uma homenagem única ao há muito perdido TYPE 57 SC ATLANTIC.
+                </p>
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-accent/70">
+                    1 Château Saint-Jean<br>Molsheim, France
+                </p>
+            </div>
+
+            <!-- Col 2: Modelo -->
+            <div class="space-y-6">
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-gold/85">La Voiture Noire</p>
+                <ul class="space-y-3 font-sans text-xs tracking-widest uppercase font-light">
+                    <li><a href="#icon" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Héritage</a></li>
+                    <li><a href="#performance" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Performance</a></li>
+                    <li><a href="#design" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Design</a></li>
+                    <li><a href="#exclusivity" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Exclusividade</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Bugatti -->
+            <div class="space-y-6">
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-gold/85">Outros Modelos</p>
+                <ul class="space-y-3 font-sans text-xs tracking-widest uppercase font-light">
+                    <li><a href="https://www.bugatti.com/en/models/chiron" target="_blank" rel="noopener noreferrer" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Chiron</a></li>
+                    <li><a href="https://www.bugatti.com/en/models/bolide" target="_blank" rel="noopener noreferrer" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Bolide</a></li>
+                    <li><a href="https://www.bugatti.com/en/models/tourbillon" target="_blank" rel="noopener noreferrer" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Tourbillon</a></li>
+                    <li><a href="https://www.bugatti.com/en/models/w16-mistral" target="_blank" rel="noopener noreferrer" class="text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300">Mistral</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Redes sociais -->
+            <div class="space-y-6">
+                <p class="font-sans text-[10px] tracking-widest uppercase text-bugatti-gold/85">Siga a Bugatti</p>
+                <div class="flex flex-col gap-4">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/bugatti/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300 group">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span class="font-sans text-[10px] tracking-widest uppercase">Instagram</span>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/@Bugatti" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300 group">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <span class="font-sans text-[10px] tracking-widest uppercase">YouTube</span>
+                    </a>
+                    <!-- X / Twitter -->
+                    <a href="https://x.com/bugatti" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-bugatti-accent/80 hover:text-bugatti-gold transition-colors duration-300 group">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <span class="font-sans text-[10px] tracking-widest uppercase">X</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faixa inferior -->
+        <div class="border-t border-white/5 py-8 px-6 md:px-20">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] tracking-widest uppercase font-sans text-bugatti-accent/60">
+                <span>© <span id="footer-year"></span> Bugatti Automobiles S.A.S.</span>
+                <span class="text-bugatti-accent/50">Todos os direitos reservados</span>
+                <span>Molsheim · Est. 1909</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

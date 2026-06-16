@@ -253,15 +253,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // -- Preloader (Phase 4) --
-    setTimeout(() => {
+    // Substituído o delay fixo (1.5s) que prejudicava o LCP. Agora o preloader some logo que a página carrega.
+    const hidePreloader = () => {
         const preloader = document.getElementById("preloader");
         if (preloader) {
-            preloader.style.transition = 'opacity 0.7s ease';
+            preloader.style.transition = 'opacity 0.4s ease';
             preloader.style.opacity = '0';
-            setTimeout(() => preloader.remove(), 700);
-            ScrollTrigger.refresh();
+            setTimeout(() => {
+                preloader.remove();
+                ScrollTrigger.refresh();
+            }, 400);
         }
-    }, 1500);
+    };
+
+    if (document.readyState === 'complete') {
+        hidePreloader();
+    } else {
+        window.addEventListener('load', hidePreloader);
+    }
 
     // -- W16 Audio Player (Phase 4) --
     const audioBtn = document.getElementById("w16-audio-btn");
@@ -287,7 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // -- Text Scramble / Decoder Effect (Phase 5) --
     const scrambleElements = document.querySelectorAll('[data-scramble]');
-    if (!isReducedMotion) {
+    // Evitamos rodar o scramble no mobile (<768px) para poupar processamento pesado na thread principal
+    if (!isReducedMotion && window.innerWidth >= 768) {
         scrambleElements.forEach((el) => {
             const originalText = el.textContent;
             gsap.to(el, {

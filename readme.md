@@ -8,7 +8,7 @@ O projeto foi desenvolvido como um laboratório pessoal para explorar **técnica
 
 ## 📸 Preview
 
-https://github.com/user-attachments/assets/61bf9ff9-780b-4d8c-b022-17f77495684e
+https://github.com/user-attachments/assets/23e1f9f1-26b5-48a1-a0bc-d7190917df15
 
 ## 🚀 Demonstração
 

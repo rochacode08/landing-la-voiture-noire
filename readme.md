@@ -1,3 +1,5 @@
+
+
 # 🏎️ Bugatti La Voiture Noire — Cinematic Landing
 
 Landing page conceitual do hipercarro **Bugatti La Voiture Noire**, construída com **HTML, Tailwind CSS e JavaScript Vanilla**.
@@ -6,8 +8,7 @@ O projeto foi desenvolvido como um laboratório pessoal para explorar **técnica
 
 ## 📸 Preview
 
-<!-- Adicione aqui um print ou gif do site. Ex: -->
-<!-- ![Preview do projeto](./assets/preview.png) -->
+https://github.com/user-attachments/assets/61bf9ff9-780b-4d8c-b022-17f77495684e
 
 ## 🚀 Demonstração
 
